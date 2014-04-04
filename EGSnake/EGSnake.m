@@ -19,9 +19,8 @@
 - (id)initWithHead:(EGGridPoint *)head bodyLength:(NSUInteger)bodyLength bodyDirection:(EGSnakeDirection)bodyDirection moveDirection:(EGSnakeDirection)moveDirection
 {
     if (self = [super init]) {
-        _head = head;
         NSMutableArray *body = [NSMutableArray array];
-        for (int i = 0; i < bodyLength; i++) {
+        for (int i = bodyLength - 1; i >= 0; i--) {
             NSInteger x, y;
             switch (bodyDirection) {
                 case EGSnakeDirectionUp:
@@ -53,6 +52,43 @@
         _direction = moveDirection;
     }
     return self;
+}
+
+- (EGGridPoint *)head
+{
+    return (EGGridPoint *)[self.body lastObject];
+}
+
+- (void)move
+{
+    // treat body as a queue
+    NSMutableArray *tmp = [NSMutableArray arrayWithArray:self.body];
+    
+    // when the snake moves, discard the first element in body (the oldest one)
+    [tmp removeObject: tmp.firstObject];
+    // and append the new head
+    NSInteger x = self.head.x, y = self.head.y;
+    switch (self.direction) {
+        case EGSnakeDirectionRight:
+            x += 1;
+            break;
+        case EGSnakeDirectionLeft:
+            x -= 1;
+            break;
+        case EGSnakeDirectionDown:
+            y -= 1;
+            break;
+        case EGSnakeDirectionUp:
+            y += 1;
+            break;
+            
+        default:
+            break;
+    }
+    EGGridPoint *newHead = [[EGGridPoint alloc] initWithX:x andY:y];
+    NSLog(@"%d %d", x, y);
+    [tmp addObject:newHead];
+    self.body = [NSArray arrayWithArray:tmp];
 }
 
 @end

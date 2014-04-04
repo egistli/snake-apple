@@ -26,5 +26,6 @@ typedef NS_ENUM(NSInteger, EGSnakeDirection) {
 @property (nonatomic, assign) EGSnakeDirection direction;
 
 - (id)initWithHead:(EGGridPoint *)head bodyLength:(NSUInteger)bodyLength bodyDirection:(EGSnakeDirection)bodyDirection moveDirection:(EGSnakeDirection)moveDirection;
+- (void)move;
 
 @end
