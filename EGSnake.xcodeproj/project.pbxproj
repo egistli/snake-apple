@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		75EBAFEE7F794A8BB5F34943 /* libPods-EGSnakeTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BDD78C065D34339BEAE1F0D /* libPods-EGSnakeTests.a */; };
 		C88BF3A618EED4DC00F545A5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C88BF3A518EED4DC00F545A5 /* Foundation.framework */; };
 		C88BF3A818EED4DC00F545A5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C88BF3A718EED4DC00F545A5 /* CoreGraphics.framework */; };
 		C88BF3AA18EED4DC00F545A5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C88BF3A918EED4DC00F545A5 /* UIKit.framework */; };
@@ -18,7 +19,10 @@
 		C88BF3C018EED4DC00F545A5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C88BF3A518EED4DC00F545A5 /* Foundation.framework */; };
 		C88BF3C118EED4DC00F545A5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C88BF3A918EED4DC00F545A5 /* UIKit.framework */; };
 		C88BF3C918EED4DC00F545A5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C88BF3C718EED4DC00F545A5 /* InfoPlist.strings */; };
-		C88BF3CB18EED4DC00F545A5 /* EGSnakeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C88BF3CA18EED4DC00F545A5 /* EGSnakeTests.m */; };
+		C88BF3D618EED52A00F545A5 /* EGSnake.m in Sources */ = {isa = PBXBuildFile; fileRef = C88BF3D518EED52A00F545A5 /* EGSnake.m */; };
+		C88BF3D918EED54A00F545A5 /* EGSnakeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C88BF3D818EED54A00F545A5 /* EGSnakeTests.m */; };
+		C88BF3DE18EEDD9000F545A5 /* EGGridPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = C88BF3DD18EEDD9000F545A5 /* EGGridPoint.m */; };
+		C88BF3E118EEDF2A00F545A5 /* EGGridPointTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C88BF3E018EEDF2A00F545A5 /* EGGridPointTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6BDD78C065D34339BEAE1F0D /* libPods-EGSnakeTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EGSnakeTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B60045D064F6436F8EE31A32 /* Pods-EGSnakeTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EGSnakeTests.xcconfig"; path = "Pods/Pods-EGSnakeTests.xcconfig"; sourceTree = "<group>"; };
 		C88BF3A218EED4DC00F545A5 /* EGSnake.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EGSnake.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C88BF3A518EED4DC00F545A5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C88BF3A718EED4DC00F545A5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -47,7 +53,13 @@
 		C88BF3BE18EED4DC00F545A5 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		C88BF3C618EED4DC00F545A5 /* EGSnakeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "EGSnakeTests-Info.plist"; sourceTree = "<group>"; };
 		C88BF3C818EED4DC00F545A5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		C88BF3CA18EED4DC00F545A5 /* EGSnakeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EGSnakeTests.m; sourceTree = "<group>"; };
+		C88BF3D418EED52A00F545A5 /* EGSnake.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGSnake.h; sourceTree = "<group>"; };
+		C88BF3D518EED52A00F545A5 /* EGSnake.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGSnake.m; sourceTree = "<group>"; };
+		C88BF3D818EED54A00F545A5 /* EGSnakeTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGSnakeTests.m; sourceTree = "<group>"; };
+		C88BF3DC18EEDD9000F545A5 /* EGGridPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGGridPoint.h; sourceTree = "<group>"; };
+		C88BF3DD18EEDD9000F545A5 /* EGGridPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGGridPoint.m; sourceTree = "<group>"; };
+		C88BF3DF18EEDE6A00F545A5 /* EGSnakeTests-PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EGSnakeTests-PrefixHeader.pch"; sourceTree = "<group>"; };
+		C88BF3E018EEDF2A00F545A5 /* EGGridPointTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGGridPointTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +80,7 @@
 				C88BF3BF18EED4DC00F545A5 /* XCTest.framework in Frameworks */,
 				C88BF3C118EED4DC00F545A5 /* UIKit.framework in Frameworks */,
 				C88BF3C018EED4DC00F545A5 /* Foundation.framework in Frameworks */,
+				75EBAFEE7F794A8BB5F34943 /* libPods-EGSnakeTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +94,7 @@
 				C88BF3C418EED4DC00F545A5 /* EGSnakeTests */,
 				C88BF3A418EED4DC00F545A5 /* Frameworks */,
 				C88BF3A318EED4DC00F545A5 /* Products */,
+				B60045D064F6436F8EE31A32 /* Pods-EGSnakeTests.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -100,6 +114,7 @@
 				C88BF3A718EED4DC00F545A5 /* CoreGraphics.framework */,
 				C88BF3A918EED4DC00F545A5 /* UIKit.framework */,
 				C88BF3BE18EED4DC00F545A5 /* XCTest.framework */,
+				6BDD78C065D34339BEAE1F0D /* libPods-EGSnakeTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -110,6 +125,7 @@
 				C88BF3B418EED4DC00F545A5 /* EGAppDelegate.h */,
 				C88BF3B518EED4DC00F545A5 /* EGAppDelegate.m */,
 				C88BF3B718EED4DC00F545A5 /* Images.xcassets */,
+				C88BF3D718EED52E00F545A5 /* Model */,
 				C88BF3AC18EED4DC00F545A5 /* Supporting Files */,
 			);
 			path = EGSnake;
@@ -129,7 +145,7 @@
 		C88BF3C418EED4DC00F545A5 /* EGSnakeTests */ = {
 			isa = PBXGroup;
 			children = (
-				C88BF3CA18EED4DC00F545A5 /* EGSnakeTests.m */,
+				C88BF3DA18EED54D00F545A5 /* Model */,
 				C88BF3C518EED4DC00F545A5 /* Supporting Files */,
 			);
 			path = EGSnakeTests;
@@ -140,8 +156,29 @@
 			children = (
 				C88BF3C618EED4DC00F545A5 /* EGSnakeTests-Info.plist */,
 				C88BF3C718EED4DC00F545A5 /* InfoPlist.strings */,
+				C88BF3DF18EEDE6A00F545A5 /* EGSnakeTests-PrefixHeader.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C88BF3D718EED52E00F545A5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C88BF3D418EED52A00F545A5 /* EGSnake.h */,
+				C88BF3D518EED52A00F545A5 /* EGSnake.m */,
+				C88BF3DC18EEDD9000F545A5 /* EGGridPoint.h */,
+				C88BF3DD18EEDD9000F545A5 /* EGGridPoint.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		C88BF3DA18EED54D00F545A5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C88BF3D818EED54A00F545A5 /* EGSnakeTests.m */,
+				C88BF3E018EEDF2A00F545A5 /* EGGridPointTests.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -168,9 +205,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C88BF3D118EED4DC00F545A5 /* Build configuration list for PBXNativeTarget "EGSnakeTests" */;
 			buildPhases = (
+				FB021D26653446BB9B0F397D /* Check Pods Manifest.lock */,
 				C88BF3B918EED4DC00F545A5 /* Sources */,
 				C88BF3BA18EED4DC00F545A5 /* Frameworks */,
 				C88BF3BB18EED4DC00F545A5 /* Resources */,
+				502E9A9AA0D943BE8052230A /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -235,12 +274,47 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		502E9A9AA0D943BE8052230A /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-EGSnakeTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FB021D26653446BB9B0F397D /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		C88BF39E18EED4DC00F545A5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C88BF3DE18EEDD9000F545A5 /* EGGridPoint.m in Sources */,
 				C88BF3B618EED4DC00F545A5 /* EGAppDelegate.m in Sources */,
+				C88BF3D618EED52A00F545A5 /* EGSnake.m in Sources */,
 				C88BF3B218EED4DC00F545A5 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -249,7 +323,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C88BF3CB18EED4DC00F545A5 /* EGSnakeTests.m in Sources */,
+				C88BF3E118EEDF2A00F545A5 /* EGGridPointTests.m in Sources */,
+				C88BF3D918EED54A00F545A5 /* EGSnakeTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -381,6 +456,7 @@
 		};
 		C88BF3D218EED4DC00F545A5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B60045D064F6436F8EE31A32 /* Pods-EGSnakeTests.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/EGSnake.app/EGSnake";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -389,7 +465,7 @@
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "EGSnake/EGSnake-Prefix.pch";
+				GCC_PREFIX_HEADER = "EGSnakeTests/EGSnakeTests-PrefixHeader.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -403,6 +479,7 @@
 		};
 		C88BF3D318EED4DC00F545A5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B60045D064F6436F8EE31A32 /* Pods-EGSnakeTests.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/EGSnake.app/EGSnake";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -411,7 +488,7 @@
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "EGSnake/EGSnake-Prefix.pch";
+				GCC_PREFIX_HEADER = "EGSnakeTests/EGSnakeTests-PrefixHeader.pch";
 				INFOPLIST_FILE = "EGSnakeTests/EGSnakeTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
@@ -438,6 +515,7 @@
 				C88BF3D018EED4DC00F545A5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C88BF3D118EED4DC00F545A5 /* Build configuration list for PBXNativeTarget "EGSnakeTests" */ = {
 			isa = XCConfigurationList;
@@ -446,6 +524,7 @@
 				C88BF3D318EED4DC00F545A5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
