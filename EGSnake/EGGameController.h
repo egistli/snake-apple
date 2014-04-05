@@ -24,6 +24,8 @@
 - (id)initWithGameView:(EGAbstractGameView *)gameView;
 
 - (void)startWithSnake:(EGSnake *)snake board:(EGGameBoard *)board andSpeed:(NSUInteger)speed;
+- (void)pause;
+- (void)resume;
 
 - (EGApple *)appleIsBeingEaten;
 - (BOOL)isSnakeEatingAnApple;

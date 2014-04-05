@@ -119,4 +119,16 @@
     [verify(self.mockBoard) genApple];
 }
 
+- (void)testPauseResume
+{
+    [self.controller startWithSnake:self.mockSnake board:self.mockBoard andSpeed:10];
+    [self.controller pause];
+    assertThatBool([self.controller.gameTimer isValid], equalToBool(NO));
+    assertThat(self.controller.gameTimer, nilValue());
+    
+    [self.controller resume];
+    assertThatBool([self.controller.gameTimer isValid], equalToBool(YES));
+    assertThatDouble([self.controller.gameTimer timeInterval], equalToDouble(1/(NSTimeInterval)10));
+}
+
 @end

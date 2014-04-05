@@ -52,6 +52,17 @@
     self.gameView.board = board;
 }
 
+- (void)pause
+{
+    [self.gameTimer invalidate];
+    self.gameTimer = nil;
+}
+
+- (void)resume
+{
+    self.gameTimer = [NSTimer scheduledTimerWithTimeInterval:(1 / (NSTimeInterval)_speed) target:self selector:@selector(gameTick) userInfo:nil repeats:YES];
+}
+
 - (void)setSpeed:(NSInteger)speed
 {
     _speed = speed;
