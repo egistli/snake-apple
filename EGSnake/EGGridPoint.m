@@ -20,6 +20,11 @@
     return self;
 }
 
++ (id)pointWithX:(NSInteger)x andY:(NSInteger)y
+{
+    return [[EGGridPoint alloc] initWithX:x andY:y];
+}
+
 - (BOOL)isEqual:(id)object
 {
     if (![object isKindOfClass:[EGGridPoint class]]) {

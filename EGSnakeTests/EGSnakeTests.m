@@ -41,7 +41,7 @@
     EGSnake *snake = [[EGSnake alloc] initWithHead:self.head bodyLength:3 bodyDirection:EGSnakeDirectionLeft moveDirection:EGSnakeDirectionRight];
     assertThat(snake.head, equalTo(self.head));
     assertThat(snake.body[2], equalTo(self.head));
-    assertThatInteger(snake.direction, equalToInteger(EGSnakeDirectionRight));
+    assertThatInteger(snake.moveDirection, equalToInteger(EGSnakeDirectionRight));
 }
 
 - (void)testSankeInit_left
@@ -61,15 +61,15 @@
 - (void)testSankeInit_up
 {
     EGSnake *snake = [[EGSnake alloc] initWithHead:self.head bodyLength:3 bodyDirection:EGSnakeDirectionUp moveDirection:EGSnakeDirectionRight];
-    assertThat(snake.body[0], equalTo([[EGGridPoint alloc] initWithX:self.head.x andY:self.head.y + 2]));
-    assertThat(snake.body[1], equalTo([[EGGridPoint alloc] initWithX:self.head.x andY:self.head.y + 1]));
+    assertThat(snake.body[0], equalTo([[EGGridPoint alloc] initWithX:self.head.x andY:self.head.y - 2]));
+    assertThat(snake.body[1], equalTo([[EGGridPoint alloc] initWithX:self.head.x andY:self.head.y - 1]));
 }
 
 - (void)testSankeInit_down
 {
     EGSnake *snake = [[EGSnake alloc] initWithHead:self.head bodyLength:3 bodyDirection:EGSnakeDirectionDown moveDirection:EGSnakeDirectionRight];
-    assertThat(snake.body[0], equalTo([[EGGridPoint alloc] initWithX:self.head.x andY:self.head.y - 2]));
-    assertThat(snake.body[1], equalTo([[EGGridPoint alloc] initWithX:self.head.x andY:self.head.y - 1]));
+    assertThat(snake.body[0], equalTo([[EGGridPoint alloc] initWithX:self.head.x andY:self.head.y + 2]));
+    assertThat(snake.body[1], equalTo([[EGGridPoint alloc] initWithX:self.head.x andY:self.head.y + 1]));
 }
 
 #pragma mark - Move
@@ -100,22 +100,9 @@
     assertThat(self.snake.body[0], equalTo([[EGGridPoint alloc] initWithX:6 andY:5]));
 }
 
-- (void)testSnake_moveUp
-{
-    self.snake = [[EGSnake alloc] initWithHead:self.head bodyLength:3 bodyDirection:EGSnakeDirectionDown moveDirection:EGSnakeDirectionUp];
-    
-    // body before move: 5,3  5,4  5,5
-    [self.snake move];
-    
-    // body after move: 5,4  5,5  5,6
-    assertThat(self.snake.body[0], equalTo([[EGGridPoint alloc] initWithX:5 andY:4]));
-    assertThat(self.snake.body[1], equalTo([[EGGridPoint alloc] initWithX:5 andY:5]));
-    assertThat(self.snake.body[2], equalTo([[EGGridPoint alloc] initWithX:5 andY:6]));
-}
-
 - (void)testSnake_moveDown
 {
-    self.snake = [[EGSnake alloc] initWithHead:self.head bodyLength:3 bodyDirection:EGSnakeDirectionUp moveDirection:EGSnakeDirectionDown];
+    self.snake = [[EGSnake alloc] initWithHead:self.head bodyLength:3 bodyDirection:EGSnakeDirectionDown moveDirection:EGSnakeDirectionUp];
     
     // body before move: 5,7  5,6  5,5
     [self.snake move];
@@ -124,6 +111,19 @@
     assertThat(self.snake.body[0], equalTo([[EGGridPoint alloc] initWithX:5 andY:6]));
     assertThat(self.snake.body[1], equalTo([[EGGridPoint alloc] initWithX:5 andY:5]));
     assertThat(self.snake.body[2], equalTo([[EGGridPoint alloc] initWithX:5 andY:4]));
+}
+
+- (void)testSnake_moveUp
+{
+    self.snake = [[EGSnake alloc] initWithHead:self.head bodyLength:3 bodyDirection:EGSnakeDirectionUp moveDirection:EGSnakeDirectionDown];
+    
+    // body before move: 5,3  5,4  5,5
+    [self.snake move];
+    
+    // body after move: 5,4  5,5  5,6
+    assertThat(self.snake.body[0], equalTo([[EGGridPoint alloc] initWithX:5 andY:4]));
+    assertThat(self.snake.body[1], equalTo([[EGGridPoint alloc] initWithX:5 andY:5]));
+    assertThat(self.snake.body[2], equalTo([[EGGridPoint alloc] initWithX:5 andY:6]));
 }
 
 @end

@@ -13,6 +13,8 @@
 @property (nonatomic, readonly, assign) NSInteger x;
 @property (nonatomic, readonly, assign) NSInteger y;
 
++ (id)pointWithX:(NSInteger)x andY:(NSInteger)y;
+
 - (id)initWithX:(NSInteger)x andY:(NSInteger)y;
 
 @end

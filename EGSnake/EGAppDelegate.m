@@ -7,6 +7,7 @@
 //
 
 #import "EGAppDelegate.h"
+#import "EGGameViewController.h"
 
 @implementation EGAppDelegate
 
@@ -16,6 +17,10 @@
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    
+    EGGameViewController *gameVC = [[EGGameViewController alloc] init];
+    [self.window setRootViewController:gameVC];
+    
     return YES;
 }
 
