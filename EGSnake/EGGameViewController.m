@@ -10,9 +10,13 @@
 #import "EGSimpleGameView.h"
 #import "EGGameController.h"
 
+#import <AVFoundation/AVFoundation.h>
+#import <QuartzCore/QuartzCore.h>
+
 @interface EGGameViewController ()
 
 @property (nonatomic) EGGameController *gameController;
+@property (nonatomic) AVAudioPlayer *player;
 
 @end
 
@@ -21,6 +25,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    NSString *soundFilePath = [[NSBundle mainBundle] pathForResource:@"swallow" ofType:@"m4a"];
+    NSURL *soundFileURL = [NSURL fileURLWithPath:soundFilePath];
+    self.player = [[AVAudioPlayer alloc] initWithContentsOfURL:soundFileURL error:nil];
+    self.player.numberOfLoops = 0;
     
     self.gameController = [[EGGameController alloc] initWithGameView:self.gameView];
     self.gameController.delegate = self;
@@ -64,7 +73,20 @@
 
 - (void)gameScoreDidChange:(EGGameController *)controller
 {
-    self.scoreLabel.text = [NSString stringWithFormat:@"%d", controller.score];
+    [self.player play];
+    self.scoreLabel.text = [NSString stringWithFormat:@"%ld", (long)controller.score];
+    [UIView animateKeyframesWithDuration:0.3 delay:0 options:0 animations:^{
+        [UIView addKeyframeWithRelativeStartTime:0 relativeDuration:0.1 animations:^{
+            self.scoreLabel.layer.transform = CATransform3DScale(CATransform3DIdentity, 1.5, 1.5, 1);
+        }];
+        [UIView addKeyframeWithRelativeStartTime:0 relativeDuration:0.2 animations:^{
+            self.scoreLabel.layer.transform = CATransform3DScale(CATransform3DIdentity, 0.8, 0.8, 1);
+        }];
+        [UIView addKeyframeWithRelativeStartTime:0 relativeDuration:0.25 animations:^{
+            self.scoreLabel.layer.transform = CATransform3DScale(CATransform3DIdentity, 1.2, 1.2, 1);
+        }];
+    } completion:^(BOOL finished) {
+    }];
 }
 
 

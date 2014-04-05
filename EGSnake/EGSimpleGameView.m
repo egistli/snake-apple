@@ -71,7 +71,7 @@
     for (int i = 0; i < self.snake.body.count; i++) {
         EGGridPoint *point = [self.snake.body objectAtIndex:i];
         CGRect dotRect = [self rectForVPoint:point];
-        UIColor *gradientGreen = [UIColor colorWithRed:0.f green:i * (1.f/self.snake.body.count) blue:0.f alpha:1];
+        UIColor *gradientGreen = [UIColor colorWithRed:0.f green: 0.1 + i * (1.f/self.snake.body.count) blue:0.f alpha:1];
         CGContextSetFillColor(context, CGColorGetComponents(gradientGreen.CGColor));
         CGContextFillRect(context, dotRect);
     }

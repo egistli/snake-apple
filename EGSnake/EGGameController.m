@@ -120,7 +120,6 @@
     
     if ([self isSnakeEatingAnApple]) {
         EGApple *apple = [self appleBeingEaten];
-        [self willChangeValueForKey:@"score"];
         _score += apple.score;
         if (self.delegate) {
             [self.delegate gameScoreDidChange:self];

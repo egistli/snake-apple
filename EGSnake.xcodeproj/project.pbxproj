@@ -15,6 +15,8 @@
 		C8487FA018EFCBD90049771D /* EGApple.m in Sources */ = {isa = PBXBuildFile; fileRef = C8487F9F18EFCBD90049771D /* EGApple.m */; };
 		C8487FA218EFDA8F0049771D /* EGGameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8487FA118EFDA8F0049771D /* EGGameViewController.xib */; };
 		C8487FA718EFF4DE0049771D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8487FA318EFF42B0049771D /* QuartzCore.framework */; };
+		C86FEECD18F004040047EC3D /* swallow.m4a in Resources */ = {isa = PBXBuildFile; fileRef = C86FEECC18F004040047EC3D /* swallow.m4a */; };
+		C86FEECF18F0044D0047EC3D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C86FEECE18F0044D0047EC3D /* AVFoundation.framework */; };
 		C88BF3A618EED4DC00F545A5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C88BF3A518EED4DC00F545A5 /* Foundation.framework */; };
 		C88BF3A818EED4DC00F545A5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C88BF3A718EED4DC00F545A5 /* CoreGraphics.framework */; };
 		C88BF3AA18EED4DC00F545A5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C88BF3A918EED4DC00F545A5 /* UIKit.framework */; };
@@ -59,6 +61,8 @@
 		C8487FA118EFDA8F0049771D /* EGGameViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EGGameViewController.xib; sourceTree = "<group>"; };
 		C8487FA318EFF42B0049771D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		C8487FA518EFF4840049771D /* QuickLook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickLook.framework; path = System/Library/Frameworks/QuickLook.framework; sourceTree = SDKROOT; };
+		C86FEECC18F004040047EC3D /* swallow.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = swallow.m4a; sourceTree = "<group>"; };
+		C86FEECE18F0044D0047EC3D /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		C88BF3A218EED4DC00F545A5 /* EGSnake.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EGSnake.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C88BF3A518EED4DC00F545A5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C88BF3A718EED4DC00F545A5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -96,6 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C86FEECF18F0044D0047EC3D /* AVFoundation.framework in Frameworks */,
 				C8487FA718EFF4DE0049771D /* QuartzCore.framework in Frameworks */,
 				C88BF3A818EED4DC00F545A5 /* CoreGraphics.framework in Frameworks */,
 				C88BF3AA18EED4DC00F545A5 /* UIKit.framework in Frameworks */,
@@ -150,6 +155,7 @@
 		C88BF3A418EED4DC00F545A5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C86FEECE18F0044D0047EC3D /* AVFoundation.framework */,
 				C8487FA518EFF4840049771D /* QuickLook.framework */,
 				C8487FA318EFF42B0049771D /* QuartzCore.framework */,
 				C88BF3A518EED4DC00F545A5 /* Foundation.framework */,
@@ -177,6 +183,7 @@
 		C88BF3AC18EED4DC00F545A5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C86FEECC18F004040047EC3D /* swallow.m4a */,
 				C88BF3AD18EED4DC00F545A5 /* EGSnake-Info.plist */,
 				C88BF3AE18EED4DC00F545A5 /* InfoPlist.strings */,
 				C88BF3B118EED4DC00F545A5 /* main.m */,
@@ -332,6 +339,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C86FEECD18F004040047EC3D /* swallow.m4a in Resources */,
 				C8487FA218EFDA8F0049771D /* EGGameViewController.xib in Resources */,
 				C88BF3B018EED4DC00F545A5 /* InfoPlist.strings in Resources */,
 				C88BF3B818EED4DC00F545A5 /* Images.xcassets in Resources */,
