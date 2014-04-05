@@ -36,4 +36,15 @@
     assertThatInteger(apple.score, equalToInteger(score));
 }
 
+- (void)testApple_disappearTime
+{
+    EGGridPoint *position = [EGGridPoint pointWithX:5 andY:5];
+    NSInteger score = 5;
+    EGApple *apple = [[EGApple alloc] initWithPosition:position andScore:score];
+    NSTimeInterval expectedDisappearTime = [[NSDate dateWithTimeIntervalSinceNow:3.f] timeIntervalSince1970];
+    apple.disappearTime = expectedDisappearTime;
+    
+    assertThatDouble(apple.disappearTime, equalToDouble(expectedDisappearTime));
+}
+
 @end

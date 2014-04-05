@@ -21,7 +21,13 @@
     CGContextClearRect(context, rect);
     
     [self drawBoardInRect:rect underContext:context];
+    [self drawApplesInRect:rect underContext:context];
     [self drawSnakeInRect:rect underContext:context];
+}
+
+- (void)drawApplesInRect:(CGRect)rect underContext:(CGContextRef)context
+{
+    mustOverride();
 }
 
 - (void)drawBoardInRect:(CGRect)rect underContext:(CGContextRef)context

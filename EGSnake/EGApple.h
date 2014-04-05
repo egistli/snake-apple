@@ -10,10 +10,11 @@
 
 #import "EGGridPoint.h"
 
-@interface EGApple : NSObject
+@interface EGApple : NSObject<NSCopying>
 
 @property (nonatomic, readonly) EGGridPoint *position;
 @property (nonatomic, assign, readonly) NSInteger score;
+@property (nonatomic) NSTimeInterval disappearTime;
 
 - (id)initWithPosition:(EGGridPoint *)position andScore:(NSInteger)score;
 

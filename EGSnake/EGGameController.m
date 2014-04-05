@@ -129,9 +129,21 @@
         [self.snake extend];
     }
     
+    NSTimeInterval currentTime = [[NSDate date] timeIntervalSince1970];
+    
+    // remove apple if it should disappear
+    for (EGApple *apple in self.board.apples) {
+        if (apple.disappearTime > 0 && apple.disappearTime <= currentTime) {
+            [self.board removeApple:apple];
+        }
+    }
+    
     // if there's no apple, gen 1
     if (self.board.apples.count == 0) {
-        [self.board genApple];
+        int numberOfApplesToGen = 1 + arc4random() % 3;
+        for (int i = 0; i < numberOfApplesToGen; i++) {
+            [self.board genApple];
+        }
     }
     
     [self adjustSpeed];

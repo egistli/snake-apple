@@ -20,6 +20,7 @@
 #pragma mark - Subclassing these for custom view
 
 - (void)drawBoardInRect:(CGRect)rect underContext:(CGContextRef)context;
+- (void)drawApplesInRect:(CGRect)rect underContext:(CGContextRef)context;
 - (void)drawSnakeInRect:(CGRect)rect underContext:(CGContextRef)context;
 
 @end

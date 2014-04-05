@@ -36,6 +36,12 @@
     EGGridPoint *position = [EGGridPoint pointWithX:x andY:y];
     
     EGApple *newApple = [[EGApple alloc] initWithPosition:position andScore:(arc4random() % 10)];
+    
+    if (newApple.score >= 8) {
+        // setup disappear time
+        newApple.disappearTime = [[NSDate dateWithTimeIntervalSinceNow:5] timeIntervalSince1970];
+    }
+    
     self.apples = [self.apples arrayByAddingObject:newApple];
 }
 
