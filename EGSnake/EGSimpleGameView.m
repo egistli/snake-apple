@@ -8,13 +8,23 @@
 
 #import "EGSimpleGameView.h"
 
+#import "EGApple.h"
+
 @implementation EGSimpleGameView
 
 - (void)drawBoardInRect:(CGRect)rect underContext:(CGContextRef)context
 {
     // clear
-    CGContextSetFillColor(context, CGColorGetComponents([UIColor redColor].CGColor));
+    CGContextSetFillColor(context, CGColorGetComponents([UIColor blackColor].CGColor));
     CGContextFillRect(context, rect);
+    
+    // draw apple
+    CGContextSetFillColor(context, CGColorGetComponents([UIColor redColor].CGColor));
+    for (int i = 0; i < self.board.apples.count; i++) {
+        EGApple *apple = [self.board.apples objectAtIndex:i];
+        CGRect dotRect = [self rectForVPoint:apple.position];
+        CGContextFillEllipseInRect(context, dotRect);
+    }
 }
 
 - (void)drawSnakeInRect:(CGRect)rect underContext:(CGContextRef)context

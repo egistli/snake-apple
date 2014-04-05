@@ -67,6 +67,11 @@
         NSLog(@"You are dead!");
     }
     
+    // if there's no apple, gen 1
+    if (self.board.apples.count == 0) {
+        [self.board genApple];
+    }
+    
     [self.gameView setNeedsDisplay];
 }
 

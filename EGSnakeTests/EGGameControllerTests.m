@@ -14,6 +14,12 @@
 #import "EGSnake.h"
 #import "EGGameBoard.h"
 
+@interface EGGameController (Testing)
+
+- (void)gameTick;
+
+@end
+
 @interface EGGameControllerTests : XCTestCase
 
 @property (nonatomic) EGGameController *controller;
@@ -82,6 +88,14 @@
     [given([self.mockSnake head]) willReturn:head];
     [self.controller startWithSnake:self.mockSnake board:self.mockBoard andSpeed:10];
     assertThatBool(YES, equalToBool([self.controller isSnakeCollideWithBoardEdge]));
+}
+
+- (void)testGameTick_genAppleWhenTheresNone
+{
+    [given([self.mockBoard apples]) willReturn:@[]];
+    [self.controller startWithSnake:self.mockSnake board:self.mockBoard andSpeed:10];
+    [self.controller gameTick];
+    [verify(self.mockBoard) genApple];
 }
 
 @end
