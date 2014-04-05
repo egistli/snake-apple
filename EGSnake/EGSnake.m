@@ -21,7 +21,7 @@
 {
     if (self = [super init]) {
         NSMutableArray *body = [NSMutableArray array];
-        for (int i = bodyLength - 1; i >= 0; i--) {
+        for (int i = (int)bodyLength - 1; i >= 0; i--) {
             NSInteger x, y;
             switch (bodyDirection) {
                 case EGSnakeDirectionUp:

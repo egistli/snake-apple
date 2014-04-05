@@ -42,7 +42,7 @@
 
 - (IBAction)startButtonTouched:(id)sender
 {
-    EGGameBoard *board = [[EGGameBoard alloc] initWithRealFrame:self.gameView.frame sideLength:8];
+    EGGameBoard *board = [[EGGameBoard alloc] initWithRealFrame:self.gameView.frame sideLength:16];
     EGSnake *snake = [[EGSnake alloc] initWithHead:[[EGGridPoint alloc] initWithX:[board vWidth] / 2 andY:[board vHeight] / 2] bodyLength:10 bodyDirection:EGSnakeDirectionLeft moveDirection:EGSnakeDirectionRight];
     [self.gameController startWithSnake:snake board:board andSpeedLevel:1];
 }
