@@ -13,6 +13,7 @@
 		C8487F9B18EFBD230049771D /* EGSimpleGameView.m in Sources */ = {isa = PBXBuildFile; fileRef = C8487F9A18EFBD230049771D /* EGSimpleGameView.m */; };
 		C8487F9D18EFCB480049771D /* EGAppleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C8487F9C18EFCB480049771D /* EGAppleTests.m */; };
 		C8487FA018EFCBD90049771D /* EGApple.m in Sources */ = {isa = PBXBuildFile; fileRef = C8487F9F18EFCBD90049771D /* EGApple.m */; };
+		C8487FA218EFDA8F0049771D /* EGGameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8487FA118EFDA8F0049771D /* EGGameViewController.xib */; };
 		C88BF3A618EED4DC00F545A5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C88BF3A518EED4DC00F545A5 /* Foundation.framework */; };
 		C88BF3A818EED4DC00F545A5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C88BF3A718EED4DC00F545A5 /* CoreGraphics.framework */; };
 		C88BF3AA18EED4DC00F545A5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C88BF3A918EED4DC00F545A5 /* UIKit.framework */; };
@@ -54,6 +55,7 @@
 		C8487F9C18EFCB480049771D /* EGAppleTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGAppleTests.m; sourceTree = "<group>"; };
 		C8487F9E18EFCBD90049771D /* EGApple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGApple.h; sourceTree = "<group>"; };
 		C8487F9F18EFCBD90049771D /* EGApple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGApple.m; sourceTree = "<group>"; };
+		C8487FA118EFDA8F0049771D /* EGGameViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EGGameViewController.xib; sourceTree = "<group>"; };
 		C88BF3A218EED4DC00F545A5 /* EGSnake.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EGSnake.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C88BF3A518EED4DC00F545A5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C88BF3A718EED4DC00F545A5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -161,6 +163,7 @@
 				C88BF3D718EED52E00F545A5 /* Model */,
 				C8F76AAE18EEF6F3004CE03C /* View Controller */,
 				C8F76AB218EEFACF004CE03C /* View */,
+				C8487FA118EFDA8F0049771D /* EGGameViewController.xib */,
 			);
 			path = EGSnake;
 			sourceTree = "<group>";
@@ -323,6 +326,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C8487FA218EFDA8F0049771D /* EGGameViewController.xib in Resources */,
 				C88BF3B018EED4DC00F545A5 /* InfoPlist.strings in Resources */,
 				C88BF3B818EED4DC00F545A5 /* Images.xcassets in Resources */,
 			);

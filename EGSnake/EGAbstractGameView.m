@@ -16,6 +16,7 @@
 
 - (void)drawRect:(CGRect)rect
 {
+    [super drawRect:rect];
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextClearRect(context, rect);
     

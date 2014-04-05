@@ -18,7 +18,7 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
-    EGGameViewController *gameVC = [[EGGameViewController alloc] init];
+    EGGameViewController *gameVC = [[EGGameViewController alloc] initWithNibName:@"EGGameViewController" bundle:nil];
     [self.window setRootViewController:gameVC];
     
     return YES;

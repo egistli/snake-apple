@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EGGameViewController">
+            <connections>
+                <outlet property="gameView" destination="wEs-aP-DL8" id="RIm-0y-XeM"/>
+                <outlet property="scoreLabel" destination="dMK-DI-oXw" id="gts-9p-ohC"/>
+                <outlet property="startButton" destination="zEj-EK-dYe" id="2dB-12-NTU"/>
+                <outlet property="view" destination="iN0-l3-epB" id="k8z-Hb-BS3"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wEs-aP-DL8" customClass="EGSimpleGameView">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <subviews>
+                        <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dMK-DI-oXw">
+                            <rect key="frame" x="0.0" y="40" width="320" height="96"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="80"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zEj-EK-dYe">
+                            <rect key="frame" x="78" y="247" width="165" height="74"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="74" id="SaN-EG-8cW"/>
+                                <constraint firstAttribute="width" constant="165" id="yRQ-GE-Jxy"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="64"/>
+                            <state key="normal" title="Play">
+                                <color key="titleColor" red="0.4549019608" green="0.58823529409999997" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="startButtonTouched:" destination="-1" eventType="touchUpInside" id="A1S-4f-gbP"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="centerY" secondItem="zEj-EK-dYe" secondAttribute="centerY" id="29k-d2-FCH"/>
+                        <constraint firstAttribute="centerX" secondItem="zEj-EK-dYe" secondAttribute="centerX" constant="-0.5" id="C4T-i9-Bno"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="wEs-aP-DL8" secondAttribute="trailing" id="B1E-bN-wJh"/>
+                <constraint firstItem="wEs-aP-DL8" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="QjP-mI-fa0"/>
+                <constraint firstAttribute="bottom" secondItem="wEs-aP-DL8" secondAttribute="bottom" id="g1p-LT-m3s"/>
+                <constraint firstItem="wEs-aP-DL8" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="tVy-Ig-27N"/>
+            </constraints>
+            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+        </view>
+    </objects>
+</document>

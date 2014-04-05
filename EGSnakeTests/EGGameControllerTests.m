@@ -56,7 +56,7 @@
 
 - (void)testStartGameSetup
 {
-    [self.controller startWithSnake:self.mockSnake board:self.mockBoard andSpeed:10];
+    [self.controller startWithSnake:self.mockSnake board:self.mockBoard andSpeedLevel:10];
     assertThatInteger(self.controller.score, equalToInteger(0));
     assertThat(self.controller.snake, equalTo(self.mockSnake));
     assertThat(self.controller.board, equalTo(self.mockBoard));
@@ -70,12 +70,12 @@
 {
     EGGridPoint *head = [EGGridPoint pointWithX:-1 andY:0];
     [given([self.mockSnake head]) willReturn:head];
-    [self.controller startWithSnake:self.mockSnake board:self.mockBoard andSpeed:10];
+    [self.controller startWithSnake:self.mockSnake board:self.mockBoard andSpeedLevel:10];
     assertThatBool(YES, equalToBool([self.controller isSnakeCollideWithBoardEdge]));
     
     head = [EGGridPoint pointWithX:0 andY:0];
     [given([self.mockSnake head]) willReturn:head];
-    [self.controller startWithSnake:self.mockSnake board:self.mockBoard andSpeed:10];
+    [self.controller startWithSnake:self.mockSnake board:self.mockBoard andSpeedLevel:10];
     assertThatBool(NO, equalToBool([self.controller isSnakeCollideWithBoardEdge]));
 }
 
@@ -84,13 +84,13 @@
     // no collide to right
     EGGridPoint *head = [EGGridPoint pointWithX:[self.mockBoard vWidth] - 1 andY:0];
     [given([self.mockSnake head]) willReturn:head];
-    [self.controller startWithSnake:self.mockSnake board:self.mockBoard andSpeed:10];
+    [self.controller startWithSnake:self.mockSnake board:self.mockBoard andSpeedLevel:10];
     assertThatBool(NO, equalToBool([self.controller isSnakeCollideWithBoardEdge]));
     
     // collide to right
     head = [EGGridPoint pointWithX:[self.mockBoard vWidth] andY:0];
     [given([self.mockSnake head]) willReturn:head];
-    [self.controller startWithSnake:self.mockSnake board:self.mockBoard andSpeed:10];
+    [self.controller startWithSnake:self.mockSnake board:self.mockBoard andSpeedLevel:10];
     assertThatBool(YES, equalToBool([self.controller isSnakeCollideWithBoardEdge]));
 }
 
@@ -100,7 +100,7 @@
     [given([self.mockSnake head]) willReturn:head];
     EGApple *apple = [[EGApple alloc] initWithPosition:[EGGridPoint pointWithX:5 andY:5] andScore:10];
     [given([self.mockBoard apples]) willReturn:@[apple]];
-    [self.controller startWithSnake:self.mockSnake board:self.mockBoard andSpeed:10];
+    [self.controller startWithSnake:self.mockSnake board:self.mockBoard andSpeedLevel:10];
     assertThatBool([self.controller isSnakeEatingAnApple], equalToBool(YES));
     assertThat(self.controller.appleIsBeingEaten, equalTo(apple));
     
@@ -114,14 +114,14 @@
 - (void)testGameTick_genAppleWhenTheresNone
 {
     [given([self.mockBoard apples]) willReturn:@[]];
-    [self.controller startWithSnake:self.mockSnake board:self.mockBoard andSpeed:10];
+    [self.controller startWithSnake:self.mockSnake board:self.mockBoard andSpeedLevel:10];
     [self.controller gameTick];
     [verify(self.mockBoard) genApple];
 }
 
 - (void)testPauseResume
 {
-    [self.controller startWithSnake:self.mockSnake board:self.mockBoard andSpeed:10];
+    [self.controller startWithSnake:self.mockSnake board:self.mockBoard andSpeedLevel:10];
     [self.controller pause];
     assertThatBool([self.controller.gameTimer isValid], equalToBool(NO));
     assertThat(self.controller.gameTimer, nilValue());

@@ -12,22 +12,34 @@
 #import "EGGameBoard.h"
 #import "EGAbstractGameView.h"
 
+@class EGGameController;
+
+@protocol EGGameControllerDelegate <NSObject>
+
+@required
+- (void)gameDidStart:(EGGameController *)controller;
+- (void)gameDidEnd:(EGGameController *)controller;
+- (void)gameScoreDidChange:(EGGameController *)controller;
+
+@end
+
 @interface EGGameController : NSObject
 
 @property (nonatomic, readonly) EGSnake *snake;
 @property (nonatomic, readonly) EGGameBoard *board;
-@property (nonatomic) NSInteger speed;
+@property (nonatomic) NSInteger speedLevel;
 @property (nonatomic, readonly) NSTimer *gameTimer;
 @property (nonatomic, readonly) EGAbstractGameView *gameView;
 @property (nonatomic, readonly) NSInteger score;
+@property (nonatomic) id<EGGameControllerDelegate> delegate;
 
 - (id)initWithGameView:(EGAbstractGameView *)gameView;
 
-- (void)startWithSnake:(EGSnake *)snake board:(EGGameBoard *)board andSpeed:(NSUInteger)speed;
+- (void)startWithSnake:(EGSnake *)snake board:(EGGameBoard *)board andSpeedLevel:(NSUInteger)speedLevel;
 - (void)pause;
 - (void)resume;
 
-- (EGApple *)appleIsBeingEaten;
+- (EGApple *)appleBeingEaten;
 - (BOOL)isSnakeEatingAnApple;
 - (BOOL)isSnakeCollideWithSelf;
 - (BOOL)isSnakeCollideWithBoardEdge;
