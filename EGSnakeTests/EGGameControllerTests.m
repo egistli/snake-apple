@@ -13,6 +13,7 @@
 #import "EGAbstractGameView.h"
 #import "EGSnake.h"
 #import "EGGameBoard.h"
+#import "EGApple.h"
 
 @interface EGGameController (Testing)
 
@@ -56,11 +57,14 @@
 - (void)testStartGameSetup
 {
     [self.controller startWithSnake:self.mockSnake board:self.mockBoard andSpeed:10];
+    assertThatInteger(self.controller.score, equalToInteger(0));
     assertThat(self.controller.snake, equalTo(self.mockSnake));
     assertThat(self.controller.board, equalTo(self.mockBoard));
     
     assertThatDouble([self.controller.gameTimer timeInterval], equalToDouble(1/(NSTimeInterval)10));
 }
+
+#pragma mark - Collision
 
 - (void)testCollisionDetection_withBoardEdgeLeft
 {
@@ -89,6 +93,23 @@
     [self.controller startWithSnake:self.mockSnake board:self.mockBoard andSpeed:10];
     assertThatBool(YES, equalToBool([self.controller isSnakeCollideWithBoardEdge]));
 }
+
+- (void)testSnakeEatTheApple
+{
+    EGGridPoint *head = [EGGridPoint pointWithX:5 andY:5];
+    [given([self.mockSnake head]) willReturn:head];
+    EGApple *apple = [[EGApple alloc] initWithPosition:[EGGridPoint pointWithX:5 andY:5] andScore:10];
+    [given([self.mockBoard apples]) willReturn:@[apple]];
+    [self.controller startWithSnake:self.mockSnake board:self.mockBoard andSpeed:10];
+    assertThatBool([self.controller isSnakeEatingAnApple], equalToBool(YES));
+    assertThat(self.controller.appleIsBeingEaten, equalTo(apple));
+    
+    [self.controller gameTick];
+    
+    assertThatInteger(self.controller.score, equalToInteger(apple.score));
+}
+
+#pragma mark - Apple control
 
 - (void)testGameTick_genAppleWhenTheresNone
 {

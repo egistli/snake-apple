@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "EGSnake.h"
+#import "EGApple.h"
 #import "EGGameBoard.h"
 #import "EGAbstractGameView.h"
 
@@ -18,11 +19,14 @@
 @property (nonatomic) NSInteger speed;
 @property (nonatomic, readonly) NSTimer *gameTimer;
 @property (nonatomic, readonly) EGAbstractGameView *gameView;
+@property (nonatomic, readonly) NSInteger score;
 
 - (id)initWithGameView:(EGAbstractGameView *)gameView;
 
 - (void)startWithSnake:(EGSnake *)snake board:(EGGameBoard *)board andSpeed:(NSUInteger)speed;
 
+- (EGApple *)appleIsBeingEaten;
+- (BOOL)isSnakeEatingAnApple;
 - (BOOL)isSnakeCollideWithSelf;
 - (BOOL)isSnakeCollideWithBoardEdge;
 

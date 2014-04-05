@@ -44,6 +44,7 @@
 
 - (void)startWithSnake:(EGSnake *)snake board:(EGGameBoard *)board andSpeed:(NSUInteger)speed
 {
+    _score = 0;
     _snake = snake;
     _board = board;
     self.speed = speed;
@@ -65,6 +66,12 @@
     [self.snake move];
     if ([self isSnakeCollideWithBoardEdge] || [self isSnakeCollideWithSelf]) {
         NSLog(@"You are dead!");
+    }
+    
+    if ([self isSnakeEatingAnApple]) {
+        EGApple *apple = [self appleIsBeingEaten];
+        _score += apple.score;
+        [self.board removeApple:apple];
     }
     
     // if there's no apple, gen 1
@@ -98,6 +105,26 @@
         collide = YES;
     }
     return collide;
+}
+
+- (BOOL)isSnakeEatingAnApple
+{
+    for (EGApple *apple in self.board.apples) {
+        if ([apple.position isEqual:self.snake.head]) {
+            return YES;
+        }
+    }
+    return NO;
+}
+
+- (EGApple *)appleIsBeingEaten
+{
+    for (EGApple *apple in self.board.apples) {
+        if ([apple.position isEqual:self.snake.head]) {
+            return apple;
+        }
+    }
+    return nil;
 }
 
 #pragma mark - Handle Gesture

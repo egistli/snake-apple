@@ -39,4 +39,11 @@
     self.apples = [self.apples arrayByAddingObject:newApple];
 }
 
+- (void)removeApple:(EGApple *)apple
+{
+    NSMutableArray *tmp = [NSMutableArray arrayWithArray:self.apples];
+    [tmp removeObject:apple];
+    self.apples = [NSArray arrayWithArray:tmp];
+}
+
 @end

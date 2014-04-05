@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+#import "EGApple.h"
+
 @interface EGGameBoard : NSObject
 
 @property (nonatomic, readonly) NSInteger sideLength;
@@ -18,5 +20,6 @@
 - (id)initWithRealFrame:(CGRect)frame sideLength:(NSInteger)sideLength;
 
 - (void)genApple;
+- (void)removeApple:(EGApple *)apple;
 
 @end
