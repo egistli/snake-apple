@@ -30,5 +30,6 @@ typedef NS_ENUM(NSInteger, EGSnakeDirection) {
 
 - (id)initWithHead:(EGGridPoint *)head bodyLength:(NSUInteger)bodyLength bodyDirection:(EGSnakeDirection)bodyDirection moveDirection:(EGSnakeDirection)moveDirection;
 - (void)move;
+- (void)extend;
 
 @end

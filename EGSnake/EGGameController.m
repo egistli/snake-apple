@@ -72,6 +72,7 @@
         EGApple *apple = [self appleIsBeingEaten];
         _score += apple.score;
         [self.board removeApple:apple];
+        [self.snake extend];
     }
     
     // if there's no apple, gen 1

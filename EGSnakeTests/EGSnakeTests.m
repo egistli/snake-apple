@@ -126,4 +126,15 @@
     assertThat(self.snake.body[2], equalTo([[EGGridPoint alloc] initWithX:5 andY:6]));
 }
 
+#pragma mark - Extension
+
+- (void)testSnakeExtend
+{
+    self.snake = [[EGSnake alloc] initWithHead:self.head bodyLength:3 bodyDirection:EGSnakeDirectionUp moveDirection:EGSnakeDirectionDown];
+    [self.snake extend];
+    assertThatUnsignedInteger(self.snake.body.count, equalToUnsignedInteger(4));
+    EGGridPoint *tail = [self.snake.body firstObject];
+    assertThat(tail, equalTo([EGGridPoint pointWithX:5 andY:2]));
+}
+
 @end

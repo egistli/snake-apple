@@ -11,6 +11,7 @@
 @interface EGSnake ()
 
 @property (nonatomic) NSArray *body;
+@property (nonatomic) EGGridPoint *lastTrimmedBody;
 
 @end
 
@@ -65,6 +66,7 @@
     NSMutableArray *tmp = [NSMutableArray arrayWithArray:self.body];
     
     // when the snake moves, discard the first element in body (the oldest one)
+    self.lastTrimmedBody = tmp.firstObject;
     [tmp removeObject: tmp.firstObject];
     // and append the new head
     NSInteger x = self.head.x;
@@ -101,6 +103,26 @@
     }
     
     _moveDirection = direction;
+}
+
+- (void)extend
+{
+    NSMutableArray *tmp = [NSMutableArray arrayWithArray:self.body];
+    if (self.lastTrimmedBody) {
+        [tmp insertObject:self.lastTrimmedBody atIndex:0];
+    } else {
+        EGGridPoint *tail1 = [self.body objectAtIndex:0];
+        EGGridPoint *tail2 = [self.body objectAtIndex:1];
+        EGGridPoint *extended;
+        if (tail1.x == tail2.x) {
+            extended = [EGGridPoint pointWithX:tail1.x andY:tail1.y > tail2.y ? tail1.y + 1 : tail1.y - 1];
+        }
+        if (tail1.y == tail2.y) {
+            extended = [EGGridPoint pointWithX:(tail1.x > tail2.x ? tail1.x + 1 : tail1.x - 1) andY:tail1.y];
+        }
+        [tmp insertObject:extended atIndex:0];
+    }
+    self.body = [NSArray arrayWithArray:tmp];
 }
 
 @end
