@@ -7,7 +7,9 @@
 //
 
 #import <XCTest/XCTest.h>
+
 #import "EGGameBoard.h"
+#import "EGApple.h"
 
 @interface EGGameBoardTests : XCTestCase
 
@@ -32,6 +34,14 @@
     EGGameBoard *board = [[EGGameBoard alloc] initWithRealFrame:CGRectMake(0.f, 0.f, 160.f, 120.f) sideLength:4];
     assertThatUnsignedInteger(board.vWidth, equalToUnsignedInteger((NSUInteger)(160.f / 4.f)));
     assertThatUnsignedInteger(board.vHeight, equalToUnsignedInteger((NSUInteger)(120.f / 4.f)));
+}
+
+- (void)testBoardApples
+{
+    EGGameBoard *board = [[EGGameBoard alloc] initWithRealFrame:CGRectMake(0.f, 0.f, 160.f, 120.f) sideLength:4];
+    [board genApple];
+    assertThatInteger(board.apples.count, equalToInteger(1));
+    assertThat(board.apples[0], instanceOf([EGApple class]));
 }
 
 @end

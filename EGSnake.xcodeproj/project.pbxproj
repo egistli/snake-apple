@@ -11,6 +11,8 @@
 		C8487F9518EFB8BB0049771D /* EGGameBoardTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C8487F9418EFB8BB0049771D /* EGGameBoardTests.m */; };
 		C8487F9718EFB9B30049771D /* EGGameControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C8487F9618EFB9B30049771D /* EGGameControllerTests.m */; };
 		C8487F9B18EFBD230049771D /* EGSimpleGameView.m in Sources */ = {isa = PBXBuildFile; fileRef = C8487F9A18EFBD230049771D /* EGSimpleGameView.m */; };
+		C8487F9D18EFCB480049771D /* EGAppleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C8487F9C18EFCB480049771D /* EGAppleTests.m */; };
+		C8487FA018EFCBD90049771D /* EGApple.m in Sources */ = {isa = PBXBuildFile; fileRef = C8487F9F18EFCBD90049771D /* EGApple.m */; };
 		C88BF3A618EED4DC00F545A5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C88BF3A518EED4DC00F545A5 /* Foundation.framework */; };
 		C88BF3A818EED4DC00F545A5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C88BF3A718EED4DC00F545A5 /* CoreGraphics.framework */; };
 		C88BF3AA18EED4DC00F545A5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C88BF3A918EED4DC00F545A5 /* UIKit.framework */; };
@@ -49,6 +51,9 @@
 		C8487F9618EFB9B30049771D /* EGGameControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGGameControllerTests.m; sourceTree = "<group>"; };
 		C8487F9918EFBD230049771D /* EGSimpleGameView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGSimpleGameView.h; sourceTree = "<group>"; };
 		C8487F9A18EFBD230049771D /* EGSimpleGameView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGSimpleGameView.m; sourceTree = "<group>"; };
+		C8487F9C18EFCB480049771D /* EGAppleTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGAppleTests.m; sourceTree = "<group>"; };
+		C8487F9E18EFCBD90049771D /* EGApple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGApple.h; sourceTree = "<group>"; };
+		C8487F9F18EFCBD90049771D /* EGApple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGApple.m; sourceTree = "<group>"; };
 		C88BF3A218EED4DC00F545A5 /* EGSnake.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EGSnake.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C88BF3A518EED4DC00F545A5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C88BF3A718EED4DC00F545A5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -201,6 +206,8 @@
 				C88BF3DD18EEDD9000F545A5 /* EGGridPoint.m */,
 				C88CF96618EF0BE2000E15C7 /* EGGameBoard.h */,
 				C88CF96718EF0BE2000E15C7 /* EGGameBoard.m */,
+				C8487F9E18EFCBD90049771D /* EGApple.h */,
+				C8487F9F18EFCBD90049771D /* EGApple.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -211,6 +218,7 @@
 				C88BF3D818EED54A00F545A5 /* EGSnakeTests.m */,
 				C88BF3E018EEDF2A00F545A5 /* EGGridPointTests.m */,
 				C8487F9418EFB8BB0049771D /* EGGameBoardTests.m */,
+				C8487F9C18EFCB480049771D /* EGAppleTests.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -376,6 +384,7 @@
 				C88BF3D618EED52A00F545A5 /* EGSnake.m in Sources */,
 				C88CF96818EF0BE2000E15C7 /* EGGameBoard.m in Sources */,
 				C88BF3B218EED4DC00F545A5 /* main.m in Sources */,
+				C8487FA018EFCBD90049771D /* EGApple.m in Sources */,
 				C8F76AAD18EEF6EF004CE03C /* EGGameViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -388,6 +397,7 @@
 				C8487F9518EFB8BB0049771D /* EGGameBoardTests.m in Sources */,
 				C88BF3D918EED54A00F545A5 /* EGSnakeTests.m in Sources */,
 				C8487F9718EFB9B30049771D /* EGGameControllerTests.m in Sources */,
+				C8487F9D18EFCB480049771D /* EGAppleTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

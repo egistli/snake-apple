@@ -13,7 +13,10 @@
 @property (nonatomic, readonly) NSInteger sideLength;
 @property (nonatomic, readonly) NSUInteger vWidth;
 @property (nonatomic, readonly) NSUInteger vHeight;
+@property (nonatomic, readonly) NSArray *apples;
 
 - (id)initWithRealFrame:(CGRect)frame sideLength:(NSInteger)sideLength;
+
+- (void)genApple;
 
 @end
